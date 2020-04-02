@@ -29,7 +29,7 @@ from torchvision import datasets, models, transforms
 
 from dataset import Dataset
 
-import FCN
+import Unet
 from metrics import dice_coef, batch_iou, mean_iou, iou_score ,ppv,sensitivity
 import losses
 from utils import str2bool, count_params
@@ -66,7 +66,7 @@ def main():
 
     # create model
     print("=> creating model %s" %args.arch)
-    model = FCN.__dict__[args.arch](args)
+    model = Unet.__dict__[args.arch](args)
 
     model = model.cuda()
 
